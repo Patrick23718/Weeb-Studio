@@ -1,0 +1,96 @@
+.header {
+	padding-top: var(--fs-600);
+	padding-bottom: var(--fs-600);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.menu-amburger {
+	cursor: pointer;
+	z-index: 11000;
+}
+
+nav {
+	display: none;
+}
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+
+.nav__menu li a {
+	display: inline-block;
+	color: var(--purple--200);
+	transition: font-weight 0.3s, color;
+}
+
+.nav__menu li a.active,
+.nav__menu li a:hover {
+	font-weight: bold;
+}
+
+.nav__menu li:not(:last-child) a {
+	margin-right: var(--fs-600);
+}
+
+.nav-visible {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	z-index: 10000;
+}
+
+.nav-visible ul {
+	display: grid;
+	grid-gap: var(--fs-300);
+	grid-template-columns: repeat(2, 1fr);
+	width: 90%;
+}
+.nav-visible ul li {
+	background-color: rgb(22, 1, 63);
+	min-height: 115px;
+}
+
+.nav-visible ul li a {
+	padding: 34px;
+	margin: 0 !important;
+	width: 100%;
+	min-height: 115px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-btn {
+	box-shadow: 0 4px 25px rgba(31, 7, 73, 0.9);
+	display: none;
+}
+
+.blur-element {
+	width: 100%;
+	background-color: rgba(6, 0, 15, 0.3);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.7s;
+}
+
+.is-visible {
+	visibility: visible;
+	opacity: 1;
+}

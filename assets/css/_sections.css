@@ -1,0 +1,119 @@
+.hero {
+	background: url(../img/cover.png);
+	background-size: cover;
+	background-origin: center;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	min-height: 510px;
+}
+
+.container {
+	padding-left: var(--fs-600);
+	padding-right: var(--fs-600);
+}
+
+.hero__content {
+	padding-top: var(--fs-600);
+	padding-bottom: var(--fs-600);
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.hero__text-content h2 {
+	color: var(--purple--50);
+	font-size: var(--fs-400);
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.hero__text-content p {
+	color: var(--purple--50);
+	margin-top: var(--fs-400);
+	margin-bottom: var(--fs-600);
+	line-height: 1.7;
+}
+
+/*Services*/
+.services {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: var(--fs-900);
+	padding-bottom: var(--fs-900);
+}
+
+.services__text {
+	text-align: center;
+	margin-bottom: var(--fs-700);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.services__text h2 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: var(--fs-600);
+	text-transform: uppercase;
+	color: #4a1d96;
+}
+
+.services__text p {
+	margin-top: var(--fs-400);
+	max-width: 730px;
+	text-align: center;
+}
+
+/*Nos Réalisation*/
+.realisations {
+	background-color: var(--gray--50);
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.realisations h3 {
+	text-align: center;
+	font-size: var(--fs-600);
+	font-weight: bold;
+	color: var(--purple--500);
+}
+
+.projets {
+	padding-left: var(--fs-600);
+	padding-right: var(--fs-600);
+	margin-top: var(--fs-800);
+	margin-top: var(--fs-700);
+}
+.personnel{
+	background-color: #ebebeb;
+	padding: var(--fs-900);
+	overflow-x: hidden;
+}
+.personnel h2{
+	text-align: center;
+	padding-bottom: 30px;
+	color: var(--purple--400);
+}
+.personnel .team {
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+}
+.personnel .team img{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.personnel .team div{
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 2px 1px rgba(77, 61, 107, 0.4) ;
+}
+.personnel .team p{
+	text-align: center;
+}
+/**SECTION CONTACTER NOUS**/
+.contact{
+	padding: var(--fs-900);
+}

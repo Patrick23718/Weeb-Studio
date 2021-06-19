@@ -1,0 +1,44 @@
+.card {
+	background-color: white;
+	max-width: 380px;
+	width: 100%;
+	height: max-content;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.card:not(:last-child) {
+	margin-right: var(--fs-600);
+	margin-bottom: var(--fs-600);
+}
+
+.card__img {
+	padding-top: var(--fs-300);
+	padding-left: var(--fs-300);
+	padding-right: var(--fs-300);
+}
+
+.card__body {
+	padding: var(--fs-300);
+}
+
+.projet-type {
+	display: inline-block;
+	padding: 0.5rem;
+	text-transform: capitalize;
+	font-weight: light;
+	background-color: var(--purple--400);
+	color: var(--purple--100);
+	font-size: var(--fs-100);
+}
+
+.projet-title {
+	font-weight: bold;
+	color: var(--gray--700);
+	text-transform: capitalize;
+	margin: 0.5rem 0;
+}
+
+.projet-description {
+	font-size: var(--fs-200);
+	color: var(--gray--400);
+}

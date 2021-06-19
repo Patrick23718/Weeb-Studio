@@ -1,0 +1,13 @@
+.btn {
+	color: var(--purple--50);
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.7rem 1rem;
+	border-radius: 4px;
+	background-color: transparent;
+}
+
+.btn-primary {
+	background-color: var(--purple--600);
+}

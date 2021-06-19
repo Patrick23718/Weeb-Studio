@@ -1,0 +1,22 @@
+body {
+	font-family: raleway;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea{
+    padding: .8rem;
+    border-radius: 8px;
+    width: 344px;
+    border: 2px solid transparent;
+    background: #F4F6F9;
+    outline: none;
+}
+input:focus{
+	border: 2px solid var(--purple--400);
+}
+textarea:focus{
+	border: 2px solid var(--purple--400);
+}
