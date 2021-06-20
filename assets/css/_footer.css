@@ -1,9 +1,17 @@
-.footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #E9E2FF;
-    height: 8vh;
-    width: 100%;
-    background-color: #694DC5;
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--fs-600);
+	background-color: var(--purple--500);
+	color: var(--purple--50);
+	flex-wrap: wrap;
+}
+
+footer *:not(:last-child) {
+	margin-bottom: var(--fs-400);
+}
+
+footer h4 {
+	font-weight: normal;
 }

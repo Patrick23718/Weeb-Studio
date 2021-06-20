@@ -1,0 +1,50 @@
+.form__group {
+	margin-bottom: var(--fs-600);
+}
+.form__group label {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	color: var(--purple--900);
+}
+
+.input__control {
+	position: relative;
+	width: 100%;
+}
+
+.input__control svg {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	transform: translatey(-50%);
+	width: 24px;
+	stroke: #130f26;
+}
+
+.form__control {
+	border: 1px solid transparent;
+	outline: none;
+	display: inline-block;
+	width: 100%;
+	background-color: #f1eff8;
+	color: var(--purple--800);
+	padding: var(--fs-300);
+	padding-left: var(--fs-900);
+	border-radius: 8px;
+	resize: none;
+	transition: all 0.3s;
+}
+
+.form__control:focus {
+	border-color: rgb(234, 97, 38);;
+	background-color: transparent;
+}
+
+.form__control::placeholder {
+	color: var(--purple--400);
+}
+
+.form__group textarea {
+	padding: var(--fs-300);
+}

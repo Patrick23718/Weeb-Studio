@@ -86,8 +86,12 @@
 	margin-top: var(--fs-700);
 }
 .personnel{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
 	background-color: #ebebeb;
-	padding: var(--fs-900);
+	padding: var(--fs-400);
 	overflow-x: hidden;
 }
 .personnel h2{
@@ -114,6 +118,82 @@ flex-wrap: wrap;
 	text-align: center;
 }
 /**SECTION CONTACTER NOUS**/
-.contact{
-	padding: var(--fs-900);
+.contact {
+	margin: var(--fs-900) 0;
 }
+
+.contact__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact__header h3 {
+	color: var(--purple--500);
+	font-size: var(--fs-600);
+	margin-bottom: var(--fs-600);
+}
+
+.contact__header p {
+	max-width: 580px;
+	text-align: center;
+}
+
+.contact__content {
+	margin: var(--fs-900) 0;
+}
+
+.contact__content div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--fs-700);
+	border-radius: 12px;
+	transition: all 0.3s;
+}
+
+.contact__content div h4 {
+	color: var(--purple--900);
+	font-weight: normal;
+	text-align: center;
+}
+
+.contact__content div:not(:last-child) {
+	margin-bottom: 32px;
+}
+
+.contact__content div svg {
+	width: var(--fs-900);
+	margin-bottom: var(--fs-200);
+	fill: var(--purple--500);
+}
+
+.contact__content div.c__active,
+.contact__content div:hover {
+	background-color: var(--purple--500);
+	color: var(--purple--50);
+	cursor: pointer;
+	box-shadow: 0 6px 25px rgba(144, 97, 249, 0.5);
+}
+
+.contact__content div.c__active h4,
+.contact__content div:hover h4,
+.contact__content div.c__active svg,
+.contact__content div:hover svg {
+	fill: var(--purple--50);
+	color: var(--purple--50);
+}
+
+.contact__form {
+	max-width: 775px;
+	border-radius: var(--fs-300);
+	box-shadow: 0 4px 25px rgba(108, 43, 217, 0.1);
+}
+
+.contact__form form {
+	width: 100%;
+	padding: var(--fs-700);
+}
+
