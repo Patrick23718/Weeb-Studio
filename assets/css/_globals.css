@@ -83,37 +83,9 @@ body{
 	color: #262626;
 }
 /*flechitas de avanzar*/
-.previous {
-    background-color: #0d40a5;
-    color: #fff;
-		margin-left:2%;
-	position:relative;
-	transition:0.5s;
-}
-.next {
-	position:relative;
-  background-color: #0d40a5	;
-  color: white;
-	margin-left:30%;
-	transition:0.5s;
-}
-.round {
-    border-radius: 50%;
-	  text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
-}
-.round:hover {
-    background-color: #0009;
-    color: #fff;
-}
-#demo{
-	margin-left:28.4%;
-	margin-top:1%;
-	padding: 0 auto;
-}
+
 .top img {
- width: 45px;
+ width: 40px;
  position: fixed;
  right: 20px;
  bottom: 20px;

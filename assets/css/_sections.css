@@ -38,13 +38,6 @@
 }
 
 /*Services*/
-.services {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding-top: var(--fs-900);
-	padding-bottom: var(--fs-900);
-}
 
 .services__text {
 	text-align: center;
@@ -54,11 +47,14 @@
 	align-items: center;
 	justify-content: center;
 }
+#sec2{
+	background-color: var(--gray--200);
+}
 
 .services__text h2 {
 	font-style: normal;
 	font-weight: bold;
-	font-size: var(--fs-600);
+	font-size: var(--fs-700);
 	text-transform: uppercase;
 	color: #4a1d96;
 }
@@ -177,9 +173,14 @@
 }
 .technologies h2{
 	text-align: center;
-	font-size: var(--fs-600);
+	font-size: var(--fs-700);
 	font-weight: bold;
 	color: var(--purple--500);
+	margin-bottom: var(--fs-900);
+}
+.technologies p{
+	margin-top: var(--fs-400);
+	text-align: center;
 }
 @keyframes scroll {
 	0% {
@@ -189,25 +190,18 @@
 	  transform: translateX(calc(-250px * 7));
 	}
   }
-  @keyframes scroll2{
-	0% {
-	  transform: translateX(0);
-	}
-	100% {
-	  transform: translateX(calc(250px * 7));
-	}
-  }
+ 
   .slider {
-	background: white;
+	background: transparent;
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-	height: 100px;
+	height: 110px;
 	margin: auto;
 	overflow: hidden;
 	position: relative;
-	width: 960px;
+	width: 100%;
   }
   .slider::before, .slider::after {
-	background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to right, rgba(253, 253, 253, 0.377)  0%, rgba(255, 255, 255, 0) 100%);
 	content: "";
 	height: 100px;
 	position: absolute;
@@ -224,24 +218,40 @@
 	top: 0;
   }
   .slider .slide-track {
-	animation: scroll 0s linear infinite;
+	animation: scroll 40s linear infinite;
 	display: flex;
 	width: calc(250px * 14);
   }
-  .slider .slide-track2 {
+  /* .slider .slide-track2 {
 	animation: scroll2 40s linear infinite;
 	display: flex;
 	width: calc(250px * 14);
-  }
+  } */
   .slider .slide {
 	height: 100px;
 	width: 150px;
   }
+
+  .techno-back{
+	background-color: rgba(0, 0, 0, 0.055); 
+	border-radius:  10px;
+	margin-bottom: 30px;
+  }
   
+.tech-title{
+	display: flex;
+	align-items: center;
+	font-size: 0.8rem;
+	color:rgba(0, 0, 0, 0.7);
+	padding: 10px
+}
+
+.tech-title h3{
+	margin-left: 2px;
+}
 
 
-
-/*Nos Réalisation*/
+/**NOS REALISATION **/
 .realisations {
 	background-color: var(--gray--50);
 	padding-top: 2rem;
@@ -250,7 +260,7 @@
 
 .realisations h3 {
 	text-align: center;
-	font-size: var(--fs-600);
+	font-size: var(--fs-800);
 	font-weight: bold;
 	color: var(--purple--500);
 }
@@ -373,3 +383,110 @@ flex-wrap: wrap;
 	padding: var(--fs-700);
 }
 
+/*Social*/
+.social-icon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.social-icon img{
+	padding: 10px;
+}
+.social-icon img:hover{
+	cursor: pointer;
+	padding: 2px;
+	transition: .5s;
+}
+
+/*Personnel*/
+
+.personnel{
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	background: var(--purple--400);
+	overflow: hidden;
+
+}
+.personnel:before{
+	position: absolute;
+	content: '';
+	width: 2000px;
+	height: 100%;
+	bottom: -70%;
+	border-radius: 50%;
+	background: rgb(226, 28, 193);
+}
+.personnel .heading{
+	display: inline-block;
+	position: relative;
+	color: #3b7cf5;
+	font-size: 4vw;
+	padding: 60px;
+	width: 100%;
+	text-align: center;
+	font-weight: 800;
+}
+.personnel .heading:before{
+	position: absolute;
+	content: '';
+	width: 15%;
+	height: 7px;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 25%;
+	background: #393939;
+}
+
+.wrapper{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+.wrapper .container{
+	position: relative;
+	width: 350px;
+	color: #fff;
+	background: #222;
+	margin: 40px 10px;
+	padding: 30px 20px;
+	border-radius: 3px;
+	transition: 0.3s ease;
+}
+
+.wrapper .container p{
+	margin-top: 50px;
+	color: #fff;
+	padding: 0 8px;
+	font-size: 15px;
+	opacity: 0.8;
+}
+.wrapper .container .left{
+	font-size: 30px;
+	display: block;
+	text-align: left;
+	color: #3b7cf5;	
+}
+.wrapper .container .right{
+	font-size: 30px;
+	display: block;
+	text-align: right;
+	color: #3b7cf5;	
+}
+.wrapper .container .social{
+	width: 100%;
+}
+.wrapper .container .social i{
+	font-size: 1.2em;
+	color: #fff;
+	padding: 8px;
+	background: rgba(255,255,255,0.08);
+	border-radius: 4px;
+	box-shadow: 0 4px 4px rgba(0,0,0,0.5);
+}
+.wrapper .container .social i:hover{
+	background: #3b7cf5;	
+    
+    }
