@@ -11,6 +11,10 @@
 	padding-left: var(--fs-600);
 	padding-right: var(--fs-600);
 }
+.container2 {
+	padding-left: var(--fs-700);
+	padding-right: var(--fs-700);
+}
 
 .hero__content {
 	padding-top: var(--fs-600);
