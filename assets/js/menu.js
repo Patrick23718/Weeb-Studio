@@ -13,13 +13,3 @@ function manageNavigation(e) {
 		nav.classList.remove("nav-visible");
 	}
 }
-
-const top = document.querySelector('.top');
-top.addEventListener('click', () => {
-
-    windows.scrollTo({
-		top: 0, left:0,
-		behavior: "smooth"
-	})
-
-})

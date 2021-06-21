@@ -37,7 +37,7 @@
 }
 
 .form__control:focus {
-	border-color: rgb(234, 97, 38);;
+	border-color: rgb(226, 28, 193);
 	background-color: transparent;
 }
 
