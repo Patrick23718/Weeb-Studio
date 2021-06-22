@@ -1,7 +1,7 @@
 <?php
    
     // Database connection
-    include('./config/db.php');
+    require_once('./config/db.php');
 
     global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
@@ -15,6 +15,8 @@
 
         // Query if email exists in db
         $sql = "SELECT * From users WHERE email = '{$email_signin}' ";
+        echo "<script>alert('".$sql."');</script>";
+
         $query = mysqli_query($connection, $sql);
         $rowCount = mysqli_num_rows($query);
 
@@ -46,14 +48,16 @@
                     $token         = $row['token'];
                     $is_active     = $row['is_active'];
                 }
-
+               
                 // Verify password
-                $password = password_verify($password_signin, $pass_word);
+               // $password = password_verify($password_signin, $pass_word);
 
                 // Allow only verified user
                 if($is_active == '1') {
-                    if($email_signin == $email && $password_signin == $password) {
-                       header("Location: ./dashboard.php");
+                  
+
+                    if($email_signin == $email && $password_signin=$pass_word) {
+                       header("Location:index.php");
                        
                        $_SESSION['id'] = $id;
                        $_SESSION['firstname'] = $firstname;

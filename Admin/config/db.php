@@ -10,7 +10,7 @@
     $hostname = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "webstudio";
+    $dbname = "weebstudio";
     
     $connection = mysqli_connect($hostname, $username, $password, $dbname) or die("Database connect.")
 

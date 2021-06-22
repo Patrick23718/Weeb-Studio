@@ -1,3 +1,9 @@
+<?php include('config/db.php');
+  if(!isset($_SESSION['firstname']))
+      echo "<script>window.location.assign('login.php')</script>";
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,7 +112,7 @@ textarea:focus{
                             <span class="profile-ava">
                                 <img alt="" style="height: 50px;width: 50px;" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">WeebStudio</span>
+                            <span class="username"><?php if(isset($_SESSION['firstname'])) echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?> </span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
@@ -146,7 +152,7 @@ textarea:focus{
                         </a>
               <ul class="sub">
                 
-                <li><a class="" href="#">Message</a></li>
+                <li><a class="" href="index.php">Message</a></li>
                 <li><a class="" href="?page=Service">Service</a></li>
                 <li><a class="" href="?page=Realisation">Realisation</a></li>
               </ul>
@@ -279,18 +285,28 @@ textarea:focus{
               
               <th><i class="icon_cogs"></i> Action</th>
             </tr>
-            <tr>
-              <td>Developpement d'application Mobile</td>
-              <td>Developpement d'application Mobile</td>
-              <td></td>
+             <?php 
+
+                $query = "SELECT * FROM `service`";
+                $con = getConnexion();
+                $services=$con->query($query)->fetchAll();
+                foreach($services as $service)
+                {
+                  ?>
+                  <tr>
+              <td><?=$service['sujet']?></td>
+              <td><?=$service['description']?></td>
+              <td><img src="../assets/img/<?=$service['image']?>" style="width: 80px;height: 80px;" alt=""></td>
               <td>
                 <div class="btn-group">
-                  <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                  <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                  <a class="btn btn-primary" href="?id=<?=$service['id_service']?>&sujet=<?=$service['sujet']?>&description=<?=$service['description']?>"><i class="icon_plus_alt2"></i></a>
+                  <a class="btn btn-danger" href="?id_service=<?=$service['id_service']?>"><i class="icon_close_alt2"></i></a>
                 </div>
               </td>
             </tr>
-        
+                  <?php
+                }
+               ?>
           </tbody>
         </table>
       </section>
@@ -370,19 +386,30 @@ textarea:focus{
               
               <th><i class="icon_cogs"></i> Action</th>
             </tr>
-            <tr>
-              <td>Developpement d'application Mobile</td>
-              <td>WeebStudio.com</td>
-              <td>application realiser pour le compte de l'entreprise web studio</td>
-              <td></td>
+
+                         <?php 
+
+                $query = "SELECT * FROM `realisation`";
+                $con = getConnexion();
+                $realisations=$con->query($query)->fetchAll();
+                foreach($realisations as $realisation)
+                {
+                  ?>
+                  <tr>
+              <td><?=$realisation['sujet']?></td>
+              <td><?=$realisation['lien']?></td>
+              <td><?=$realisation['description']?></td>
+              <td><img src="../assets/img/<?=$realisation['image']?>" style="width: 80px;height: 80px;" alt=""></td>
               <td>
                 <div class="btn-group">
-                  <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                  <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
+                  <a class="btn btn-primary" href="?id=<?=$realisation['id_realisation']?>&lien=<?=$realisation['lien']?>&sujet=<?=$realisation['sujet']?>&description=<?=$realisation['description']?>"><i class="icon_plus_alt2"></i></a>
+                  <a class="btn btn-danger" href="?id_realisation=<?=$realisation['id_realisation']?>"><i class="icon_close_alt2"></i></a>
                 </div>
               </td>
             </tr>
-        
+                  <?php
+                }
+               ?>
           </tbody>
         </table>
       </section>
@@ -414,18 +441,30 @@ textarea:focus{
               
               <th><i class="icon_cogs"></i> Action</th>
             </tr>
+                  <?php 
+
+                $query = "SELECT * FROM `message`";
+                $con = getConnexion();
+                $messages=$con->query($query)->fetchAll();
+                foreach($messages as $message)
+                {
+                  ?>
             <tr>
-              <td>Angeline Mcclain</td>
-              <td>2004-07-06</td>
-              <td>dale@chief.info</td>
-              <td>Bonjour a vous j'aimerai avoir un devis de site web</td>
+              <td><?=$message['nom_complet']?></td>
+              <td><?=$message['date']?></td>
+              <td><?=$message['email']?></td>
+              <td><?=$message['message']?></td>
               <td>
                 <div class="btn-group">
-                  <a class="btn btn-primary" style="text-decoration:none;" href="#">Repondre</a>
+                  <a class="btn btn-primary" style="text-decoration:none;" href="?email=<?=$message['email']?>">Repondre</a>
                  
                 </div>
               </td>
             </tr>
+            <?php
+
+                }
+            ?>
         
           </tbody>
         </table>
@@ -512,7 +551,8 @@ textarea:focus{
      }
  if(isset($_POST['Service']))
  {
-   if(isset($_FILES['images']))
+   if(isset($_FILES['image']))
+    require_once('uploadimage.php');
 
   $query = "INSERT INTO `service` Values(null,:sujet,:descriptions,:images)";
   $con = getConnexion();
@@ -523,7 +563,7 @@ textarea:focus{
       (
           ':sujet' => $_POST['Sujet'],
           ':descriptions'=>$_POST['description'],
-          ':images' => $_FILES['images']['name']
+          ':images' => $_FILES['image']['name']
       )
   ); 
   if($insert)
@@ -534,7 +574,8 @@ textarea:focus{
  
  if(isset($_POST['Realisation']))
  {
-   if(isset($_FILES['images']))
+   if(isset($_FILES['image']))
+      require_once('uploadimage.php');
 
   $query = "INSERT INTO `realisation` Values(null,:sujet,:lien,:descriptions,:images)";
   $con = getConnexion();
@@ -546,16 +587,80 @@ textarea:focus{
           ':sujet' => $_POST['Sujet'],
           ':lien'=>$_POST['lien'],
           ':descriptions'=>$_POST['description'],
-          ':images' => $_FILES['images']['name']
+          ':images' => $_FILES['image']['name']
       )
   ); 
   if($insert)
-    echo "<span style=\"color: green;font-weight: bold;\">Ajout de la realisation reussi</span>"; 
+    echo " <center><span style=\"color: green;font-weight: bold;\">Ajout de la realisation reussi</span></center>"; 
   else
-    echo "<span style=\"color: red;font-weight: bold;\">echec d'ajout de la realisation</span>";
+    echo "<center><span style=\"color: red;font-weight: bold;\">echec d'ajout de la realisation</span></center>";
  }
         
      
 
      ?>
-     
+    <?php 
+                 if(isset($_GET['id_service']) || isset($_GET['id_ser']))
+                 {   
+                      if(!isset($_GET['id_ser']))
+                           echo "<script>let result=confirm('vouler vous vraiment supprimer ce service de la base de donnees')</script>";
+                      if(!isset($_GET['result']))
+                           echo "<script>window.location.assign(\"index.php?id_ser=".$_GET['id_service']."&result=\"+ result)</script>";
+
+
+
+                    
+                 }
+              
+                 if(isset($_GET['result']))
+                 {
+                   if($_GET['result']=='true')
+                      {
+                         $query="DELETE FROM `service` WHERE `id_service` =".$_GET['id_ser'];
+                      var_dump($_GET['result']);
+                      $bdd=getConnexion();
+                     if ($bdd->query($query))
+                       echo "<script>alert('service supprimer')</script>";
+                     else
+                      echo "<script>alert(\" imposible de supprimer ce service\")</script>";
+                      }
+                      else
+                      {
+                     echo "<script>alert(\"suppresion annuler\")</script>";
+                      }
+                      echo "<script>window.location.assign(\"index.php?page=Service\")</script>";
+
+                 }
+
+                 if(isset($_GET['id_realisation']) || isset($_GET['id_ser']))
+                 {   
+                      if(!isset($_GET['id_real']))
+                           echo "<script>let result=confirm('vouler vous vraiment supprimer cette realisation de la base de donnees')</script>";
+                      if(!isset($_GET['result1']))
+                           echo "<script>window.location.assign(\"index.php?id_real=".$_GET['id_realisation']."&result1=\"+ result)</script>";
+
+
+
+                    
+                 }
+              
+                 if(isset($_GET['result1']))
+                 {
+                   if($_GET['result1']=='true')
+                      {
+                         $query="DELETE FROM `realisation` WHERE `id_realisation` =".$_GET['id_real'];
+                      
+                      $bdd=getConnexion();
+                     if ($bdd->query($query))
+                       echo "<script>alert('realisation supprimer')</script>";
+                     else
+                      echo "<script>alert(\" imposible de supprimer cette realisation\")</script>";
+                      }
+                      else
+                      {
+                     echo "<script>alert(\"suppresion annuler\")</script>";
+                      }
+                      echo "<script>window.location.assign(\"index.php?page=Realisation\")</script>";
+
+                 }
+              ?>
