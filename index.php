@@ -1,3 +1,6 @@
+<?php
+  require_once('lang.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,7 +12,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
-		<title>Bienvenue sur Weeb Studio</title>
+		<title><?=$lang['1']?></title>
 	</head>
 	<body>
 <!-- 		
@@ -24,15 +27,18 @@
 				</a>
 				<nav>
 					<ul class="nav__menu">
-						<li><a href="#sec1">Accueil</a></li>
-						<li><a href="#sec2">Nos Services</a></li>
-						<li><a href="#sec3">Réalisations</a></li>
-						<li><a href="#sec4">Contact</a></li>
+						<li><a href="#sec1"><?=$lang['2']?></a></li>
+						<li><a href="#sec2"><?=$lang['3']?></a></li>
+						<li><a href="#sec3"><?=$lang['4']?></a></li>
+						<li><a href="#sec4"><?=$lang['5']?></a></li>
 					</ul>
 				</nav>
-
-				<button class="btn btn-primary btn-dropdow">langues</button>
-				<a href="#" class="contact-btn btn btn-primary"> Contactez  Nous </a>
+				<div><a href="?lang=fr"><button class="btn btn-primary btn-dropdow">FR</button></a>
+				<a href="?lang=en"><button class="btn btn-primary btn-dropdow">EN</button></a></div>
+				
+			
+			   	
+				<a href="#" class="contact-btn btn btn-primary"><?=$lang['6']?></a>
 				<span class="menu-amburger">
 					<svg
 						width="24"
@@ -51,16 +57,14 @@
 			<section class="hero__content" id="sec1">
 				<div class="hero__text-content">
 					<h2>
-						Nous transformons votre façon de voire les choses par le biais du
-						Digital
+					     <?=$lang['7']?>
 					</h2>
 					<p>
-						Lorem ipsum dolor sit amet. Et expedita sint est eveniet ratione sed
-						iste impedit ab illum praesentium ea quia galisum. Sed error rerum a
-						rerum maxime et
+					<?=$lang['8']?>
+						
 					</p>
 
-					<button type="button" class="btn btn-primary">Nos Expertises</button>
+					<button type="button" class="btn btn-primary"><?=$lang['9']?></button>
 				</div>
 				<div class="hero__content-img">
 					<div class="text">
@@ -199,11 +203,10 @@
 		</section>
 		<section class="container" id="sec2">
 			<div class="services__text">
-				<h2>Decouvrez nos différents services</h2>
+				<h2><?=$lang['10']?></h2>
 				<p>
-					Lorem ipsum dolor sit amet. Et expedita sint est eveniet ratione sed
-					iste impedit ab illum praesentium ea quia galisum. Sed error rerum a
-					rerum maxime et
+				<?=$lang['11']?>
+					
 				</p>
 			</div>
 			
@@ -228,14 +231,13 @@
 							</svg>
 							<!-- <img
 								src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true"> -->
-							<h3>Design</h3>
+							<h3><?=$lang['12']?></h3>
 						</div>
 					</div>
 					<div class="face face2">
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis
-								provident at.</p>
-							<a href="#">Read More</a>
+							<p><?=$lang['13']?></p>
+							<a href="#"><?=$lang['14']?></a>
 						</div>
 					</div>
 				</div>
@@ -252,14 +254,13 @@
 								</g>
 							</svg>
 							<!-- <svg id="Layer_1" enable-background="new 0 0 512 512" height="100" viewBox="0 0 512 512" width="100" xmlns="http://www.w3.org/2000/svg"><g><path d="m483.312 10h-30.312c-9.386 0-9.813 15 0 15h30.312c7.547 0 13.688 6.141 13.688 13.688v188.106h-257.687v-46.972c0-8.505-6.919-15.424-15.424-15.424h-137.649v-125.71c0-7.547 6.141-13.688 13.688-13.688h310.072c9.386 0 9.813-15 0-15h-310.072c-15.819 0-28.688 12.87-28.688 28.688v125.711h-55.816c-8.505 0-15.424 6.919-15.424 15.424v269.752c0 8.506 6.919 15.425 15.424 15.425h156.659v14.557c0 9.923 6.545 18.356 15.586 21.312.118.039.234.082.354.119.041.013.083.023.123.035 2.083.634 4.291.978 6.579.978h81.88c2.275 0 4.471-.341 6.545-.968.053-.016.107-.029.16-.046.107-.033.211-.072.317-.106 9.059-2.945 15.62-11.388 15.62-21.323v-112.977h87.929c9.386 0 9.813-15 0-15h-30.828l-10.348-45.033h137.311c15.625 0 28.688-13.025 28.688-28.688v-239.172c.001-15.819-12.868-28.688-28.687-28.688zm13.688 231.794v36.051c0 7.512-6.18 13.702-13.673 13.702h-184.131c-.746-11.815-10.591-21.2-22.591-21.2h-37.292v-28.553zm-220.395 43.554c4.214 0 7.642 3.428 7.642 7.641v161.91h-97.164v-161.91c0-4.213 3.428-7.642 7.642-7.642h81.88zm-261.605 164.228c.424-.427-.813-270.268.423-270.176.001-.001 208.466-.001 208.466-.001.234 0 .424.19.424.424v90.525h-12.531v-71.015c0-4.142-3.358-7.5-7.5-7.5h-169.251c-4.142 0-7.5 3.358-7.5 7.5v123.667c0 9.385 15 9.813 15 0v-116.167h154.251v63.515c-12.988-.547-24.699 9.197-24.699 22.642v108.904h-129.552v-37.412c0-9.385-15-9.813-15 0v44.912c0 4.142 3.358 7.5 7.5 7.5h137.052v33.106c-.426-.422-157.173.808-157.083-.424zm179.768 37.424c-.781 0-1.534-.114-2.244-.325-.015-.005-.031-.009-.046-.013-.038-.012-.075-.025-.113-.037-3.061-.997-5.281-3.877-5.281-7.266v-9.46h97.164v9.46c0 3.39-2.219 6.269-5.281 7.267-.038.012-.075.026-.113.037-.016.005-.032.009-.048.014-.71.21-1.463.324-2.243.324h-81.795zm146.189-135.419h-41.71v-45.033h31.362z"/><path d="m127.46 425.793h-15.606c-9.931.344-9.923 14.659 0 15h15.606c9.931-.344 9.923-14.659 0-15z"/><path d="m229.054 307.992h13.223c9.931-.344 9.923-14.659 0-15h-13.223c-9.931.344-9.924 14.659 0 15z"/></g></svg> -->
-							<h3>Code</h3>
+							<h3><?=$lang['15']?></h3>
 						</div>
 					</div>
 					<div class="face face2">
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis
-								provident at.</p>
-							<a href="#">Read More</a>
+							<p><?=$lang['16']?></p>
+							<a href="#"><?=$lang['14']?></a>
 						</div>
 					</div>
 				</div>
@@ -304,9 +305,8 @@
 					</div>
 					<div class="face face2">
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis
-								provident at.</p>
-							<a href="#">Read More</a>
+							<p><?=$lang['17']?></p>
+							<a href="#"><?=$lang['14']?></a>
 						</div>
 					</div>
 				</div>
@@ -342,9 +342,8 @@
 					</div>
 					<div class="face face2">
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis
-								provident at.</p>
-							<a href="#">Read More</a>
+							<p><?=$lang['18']?></p>
+							<a href="#"><?=$lang['14']?></a>
 						</div>
 					</div>
 				</div>
@@ -421,9 +420,8 @@
 					</div>
 					<div class="face face2">
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis
-								provident at.</p>
-							<a href="#">Read More</a>
+							<p><?=$lang['19']?></p>
+							<a href="#"><?=$lang['14']?></a>
 						</div>
 					</div>
 				</div>
@@ -446,9 +444,8 @@
 					</div>
 					<div class="face face2">
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis
-								provident at.</p>
-							<a href="#">Read More</a>
+							<p><?=$lang['20']?></p>
+							<a href="#"><?=$lang['14']?></a>
 						</div>
 					</div>
 				</div>
@@ -459,7 +456,7 @@
 
 		 <section class="technologies container" style="margin-left: 2%; margin-right: 2%;">
 
-			<h2>TECHNOLOGIES UTILISEES</h2>
+			<h2><?=$lang['21']?></h2>
 		
 			<div class="techno-back">
 				<div class="tech-title">
@@ -495,7 +492,7 @@
 							</g>
 						</g>
 					</svg>
-					<h3>Server Technologies</h3>
+					<h3><?=$lang['22']?></h3>
 				</div>
 				<div class="slider">
 					<div class="slide-track">
@@ -578,7 +575,7 @@
 							</g>
 						</g>
 					</svg>
-					<h3>Server Technologies</h3>
+					<h3><?=$lang['22']?></h3>
 				</div>
 				<div class="slider">
 					<div class="slide-track">
@@ -630,18 +627,17 @@
 			</div>
 		 </section>
 		<section class="realisations" id="sec3">
-			<h3>Nos Réalisations</h3>
+			<h3><?=$lang['23']?></h3>
 			<div class="projets">
 				<div class="card projet__items">
 					<div class="card__img">
 						<img src="./assets/img/card-1.png" alt="mobile design" />
 					</div>
 					<div class="card__body">
-						<div class="projet-type">Web design</div>
-						<div class="projet-title">Boutique E-commerce High-Electro</div>
+						<div class="projet-type"><?=$lang['24']?></div>
+						<div class="projet-title"><?=$lang['25']?></div>
 						<div class="projet-description">
-							Le client souhaitait intégrées de manière simple et rapide des
-							produits dans sa boutique
+						<?=$lang['26']?>	
 						</div>
 					</div>
 				</div>
@@ -650,11 +646,10 @@
 						<img src="./assets/img/card-1.png" alt="mobile design" />
 					</div>
 					<div class="card__body">
-						<div class="projet-type">Web design</div>
-						<div class="projet-title">Boutique E-commerce High-Electro</div>
+						<div class="projet-type"><?=$lang['24']?></div>
+						<div class="projet-title"><?=$lang['25']?></div>
 						<div class="projet-description">
-							Le client souhaitait intégrées de manière simple et rapide des
-							produits dans sa boutique
+						<?=$lang['26']?>	
 						</div>
 					</div>
 				</div>
@@ -663,11 +658,10 @@
 						<img src="./assets/img/card-1.png" alt="mobile design" />
 					</div>
 					<div class="card__body">
-						<div class="projet-type">Web design</div>
-						<div class="projet-title">Boutique E-commerce High-Electro</div>
+						<div class="projet-type"><?=$lang['24']?></div>
+						<div class="projet-title"><?=$lang['25']?></div>
 						<div class="projet-description">
-							Le client souhaitait intégrées de manière simple et rapide des
-							produits dans sa boutique
+						<?=$lang['26']?>	
 						</div>
 					</div>
 				</div>
@@ -678,12 +672,12 @@
 		</section>
 		<section class="personnel">
 			<div class="heading">
-				<h2>Notre Personnel</h2>
+				<h2><?=$lang['27']?></h2>
 			</div>
 			<div class="wrapper">
 				<div class="container">
 					
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam neque reiciendis sit. Incidunt tempore vitae aliquam alias voluptatem accusantium magnam eos harum ipsam modi, quisquam illo facilis suscipit maxime obcaecati laboriosam cum blanditiis ducimus ut consectetur id mollitia aperiam rerum.</span></p>
+					<p><?=$lang['28']?></p>
 					<div class="social-icon">
 						<img src="./assets/img/facebook-brands.svg"   width="50" height="50" alt="">
 						<img src="./assets/img/github-brands.svg" width="50" height="50" alt="">
@@ -693,7 +687,7 @@
 	
 				<div class="container">
 					
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam neque reiciendis sit. Incidunt tempore vitae aliquam alias voluptatem accusantium magnam eos harum ipsam modi, quisquam illo facilis suscipit maxime obcaecati laboriosam cum blanditiis ducimus ut consectetur id mollitia aperiam rerum./span></p>
+					<p><?=$lang['28']?></p>
 					<div class="social-icon">
 						<img src="./assets/img/facebook-brands.svg"   width="50" height="50" alt="">
 						<img src="./assets/img/github-brands.svg" width="50" height="50" alt="">
@@ -703,7 +697,7 @@
 	
 				<div class="container">
 					
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam neque reiciendis sit. Incidunt tempore vitae aliquam alias voluptatem accusantium magnam eos harum ipsam modi, quisquam illo facilis suscipit maxime obcaecati laboriosam cum blanditiis ducimus ut consectetur id mollitia aperiam rerum.</p>
+					<p><?=$lang['28']?></p>
 					<div class="social-icon">
 						<img src="./assets/img/facebook-brands.svg"   width="50" height="50" alt="">
 						<img src="./assets/img/github-brands.svg" width="50" height="50" alt="">
@@ -716,11 +710,9 @@
 		</section>
 		<section class="contact container" id="sec4">
 			<div class="contact__header">
-				<h3>Contactez Nous</h3>
+				<h3><?=$lang['6']?></h3>
 				<p>
-					Lorem ipsum dolor sit amet. Et expedita sint est eveniet ratione sed
-					iste impedit ab illum praesentium ea quia galisum. Sed error rerum a
-					rerum maxime
+				<?=$lang['29']?>
 				</p>
 			</div>
 			<div class="contact__content">
@@ -737,7 +729,7 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-					<h4>Rue des Avions, 119 Logpomg</h4>
+					<h4><?=$lang['30']?></h4>
 				</div>
 				<div class="c__active">
 					<svg
@@ -772,7 +764,7 @@
 					<div>
 						<div>
 							<div class="form__group">
-								<label for="name">Nom et prenom</label>
+								<label for="name"><?=$lang['31']?></label>
 								<div class="input__control">
 									<input type="text" name="name" class="form__control" />
 									<svg
@@ -830,7 +822,7 @@
 								</div>
 							</div>
 							<div class="form__group">
-								<label for="tel">Tel</label>
+								<label for="tel"><?=$lang['32']?></label>
 								<div class="input__control">
 									<input type="tel" name="tel" class="form__control" />
 									<svg
@@ -852,7 +844,7 @@
 						</div>
 
 						<div class="form__group .form-textarea">
-							<label for="message">Message</label>
+							<label for="message"><?=$lang['33']?></label>
 							<textarea
 								name="message"
 								id=""
@@ -864,7 +856,7 @@
 							></textarea>
 						</div>
 					</div>
-					<button class="btn btn-primary">Envoyer</button>
+					<button class="btn btn-primary"><?=$lang['33']?></button>
 				</form>
 			</div>
 			<div class="social-icon">
@@ -879,9 +871,20 @@
 			<a href="" class="header__logo">
 				<img src="./assets/img/logo.svg" alt="logo" />
 			</a>
-			<h4>WEEB STUDIO Tous les droits Réservés </h4>
+			<h4>WEEB STUDIO <?=$lang['34']?>  </h4>
 			<h4>2021-2020</h4>
 		</footer>
 		<script type="module" src="./assets/js/index.js"></script>
+		<script>
+				function lang()
+                {
+					select = document.getElementById("lang");
+                    choice = select.selectedIndex;
+                    valeur = select.options[choice].value;
+                
+                  window.location.assign("index.php?lang="+valeur);
+                
+                }
+           </script>
 	</body>
 </html>

@@ -13,3 +13,16 @@ function manageNavigation(e) {
 		nav.classList.remove("nav-visible");
 	}
 }
+
+
+function lang()
+{
+	select = document.getElementById("lang");
+	choice = select.selectedIndex;
+	valeur = select.options[choice].value;
+
+  window.location.assign("index.php.php?lang="+valeur);
+
+}
+
+
