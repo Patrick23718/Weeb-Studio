@@ -1,10 +1,10 @@
 .card {
 	background-color: white;
-	max-width: 300px;
+	max-width: 380px;
 	width: 100%;
 	height: max-content;
-margin-bottom: 20px !important;
-	/* box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); */
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 6px 25px rgba(98, 85, 211, 0.2);
 }
 
 .card:not(:last-child) {

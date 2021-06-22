@@ -176,10 +176,13 @@
 	font-size: var(--fs-700);
 	font-weight: bold;
 	color: var(--purple--500);
-	margin-bottom: var(--fs-900);
+	margin-bottom: var(--fs-400);
 }
 .technologies p{
 	margin-top: var(--fs-400);
+	font-family: 'Poppins',Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: 500;
+	max-width: 730px;
 	text-align: center;
 }
 @keyframes scroll {
@@ -222,11 +225,7 @@
 	display: flex;
 	width: calc(250px * 14);
   }
-  /* .slider .slide-track2 {
-	animation: scroll2 40s linear infinite;
-	display: flex;
-	width: calc(250px * 14);
-  } */
+
   .slider .slide {
 	height: 100px;
 	width: 150px;
@@ -271,38 +270,7 @@
 	margin-top: var(--fs-800);
 	margin-top: var(--fs-700);
 }
-.personnel{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	background-color: #ebebeb;
-	padding: var(--fs-400);
-	overflow-x: hidden;
-}
-.personnel h2{
-	text-align: center;
-	padding-bottom: 30px;
-	color: var(--purple--400);
-}
-.personnel .team {
-display: flex;
-justify-content: space-around;
-align-items: center;
-flex-wrap: wrap;
-}
-.personnel .team img{
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
-}
-.personnel .team div{
-  width: 250px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 2px 1px rgba(77, 61, 107, 0.4) ;
-}
-.personnel .team p{
-	text-align: center;
-}
+
 /**SECTION CONTACTER NOUS**/
 .contact {
 	margin: var(--fs-900) 0;
@@ -394,8 +362,8 @@ flex-wrap: wrap;
 }
 .social-icon img:hover{
 	cursor: pointer;
-	padding: 2px;
-	transition: .5s;
+	padding: 1px;
+	transition: .4s;
 }
 
 /*Personnel*/
@@ -415,7 +383,7 @@ flex-wrap: wrap;
 	height: 100%;
 	bottom: -70%;
 	border-radius: 50%;
-	background: rgb(226, 28, 193);
+	background: rgba(226, 28, 193, 1);
 }
 .personnel .heading{
 	display: inline-block;
@@ -490,3 +458,97 @@ flex-wrap: wrap;
 	background: #3b7cf5;	
     
     }
+
+
+
+	.equipe{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.cad {
+		width: 300px;
+		height: 379px;
+		background-color: white;
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 25px;
+		align-items: center;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		box-shadow: 0 70px 63px -60px rgba(98, 85, 211, 0.2);
+	}
+
+	.border{
+		height: 375px;
+		width: 295px;
+		border-radius: 10px;
+		position: relative;
+	}
+	.border:hover{
+		border: 2px solid var(--purple--600);
+	}
+	.card0 {
+		background: url('../img/ben-parker-OhKElOkQ3RE-unsplash.jpg') center center no-repeat;
+		background-size: 300px;
+	  }
+		  
+	  .card0:hover {
+		  background: url('../img/ben-parker-OhKElOkQ3RE-unsplash.jpg') left center no-repeat;
+		  background-size: 600px;
+	  }
+	  
+	  .card1 {
+		background: url('../img/ben-parker-OhKElOkQ3RE-unsplash.jpg') center center no-repeat;
+		background-size: 300px;
+	  }
+	  
+	  .card1:hover {
+		  background: url('../img/ben-parker-OhKElOkQ3RE-unsplash.jpg') left center no-repeat;
+		  background-size: 600px;
+	  }
+	  
+	  .card2 {
+		background: url('../img/ben-parker-OhKElOkQ3RE-unsplash.jpg') center center no-repeat;
+		background-size: 300px;
+	  }
+	  
+	  .card2:hover {
+		  background: url('../img/ben-parker-OhKElOkQ3RE-unsplash.jpg') left center no-repeat;
+		  background-size: 600px;
+	  }
+
+	  .icons{
+		  position: absolute;
+		  display: flex;
+		  flex-direction: column;
+		  height: 130px;
+		  justify-content: space-around;
+		  align-items: center;
+		  width: 30px;
+		  top: 226px;
+	  }
+
+	  .cad h2{
+		  color: var(--purple--500);
+		  margin: 20px;
+		  opacity: 0;
+		  transition: all 1s;
+	  }
+	  .cad:hover h2{
+		  opacity: 1;
+	  }
+
+	.border .icons img{
+		opacity: 0;
+		transition: all 1s;
+	}
+	.border .icons a{
+		color: var(--purple--500);
+	}
+
+	.cad:hover .border .icons img {
+		opacity: 1;
+		cursor: pointer;
+	}
