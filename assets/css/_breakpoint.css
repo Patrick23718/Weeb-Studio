@@ -31,6 +31,10 @@
 		margin-bottom: var(--fs-900);
 	}
 
+	.services .services__text {
+		margin-bottom: 0;
+	}
+
 	.realisations {
 		padding-top: 3rem;
 		padding-bottom: 3rem;
@@ -81,6 +85,10 @@
 		margin-bottom: 64px;
 	}
 
+	.services .services__text {
+		margin-bottom: 0;
+	}
+	
 	.realisation h3 {
 		font-size: var(--fs-800);
 	}
@@ -156,6 +164,10 @@
 
 	.services__text {
 		margin-bottom: 6rem;
+	}
+
+	.services .services__text {
+		margin-bottom: 0;
 	}
 
 	.realisations {
